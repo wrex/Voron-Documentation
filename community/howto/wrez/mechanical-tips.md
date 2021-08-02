@@ -4,16 +4,20 @@ title: <title>
 nav_exclude: true
 ---
 
-# A Machinist's Guide to 3D Printer Mechanics
+# Mechanical tips
 
-This guide is intended for people that are building or have just finished
-building a Voron printer want to ensure that it's assembled as accurately as
-possible.
+## AKA: A Machinist's Guide to building a 3D Printer
+
+This guide is intended for people that are building a 3D printer (presumably
+a Voron) and want to ensure that it's assembled as accurately as possible.
 
 A huge fraction of printing issues can be traced back to purely mechanical
 issues (versus slicer or printer configuration settings). It pays to get the
 mechanics right as early as possible, but the information in this guide is
 equally useful for troubleshooting an existing machine.
+
+While the author knows a little bit about many things, it may be worth reviewing
+the [caveats](#Caveats) at the end of this document.
 
 ## Caveats
 
