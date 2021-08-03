@@ -4,6 +4,8 @@ title: Indispensable Tools
 nav_exclude: false
 has_children: false
 parent: Mechanical Tips
+grand_parent: Community Documentation
+nav_order: 1
 ---
 
 ## Tools
