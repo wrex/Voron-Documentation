@@ -1,111 +1,170 @@
 ---
 layout: default
-title: <title>
+title: Mechanical Tips
 nav_exclude: true
+has_children: false
 ---
 
 # Mechanical tips
 
-## AKA: A Machinist's Guide to building a 3D Printer
+## AKA: A Machinist's Guide to building and troubleshooting a 3D Printer
 
-This guide is intended for people that are building a 3D printer (presumably
-a Voron) and want to ensure that it's assembled as accurately as possible.
+This guide intends to assist anyone building a 3D printer who wants to ensure
+that it's assembled as accurately as possible.
 
-A huge fraction of printing issues can be traced back to purely mechanical
-issues (versus slicer or printer configuration settings). It pays to get the
-mechanics right as early as possible, but the information in this guide is
-equally useful for troubleshooting an existing machine.
+Many printing problems trace back to purely mechanical issues (versus slicer
+or printer configuration settings). It pays to get the mechanics right as you
+are building a printer, but the information in this guide is equally useful for
+troubleshooting an existing machine.
 
-While the author knows a little bit about many things, it may be worth reviewing
-the [caveats](#Caveats) at the end of this document.
+Fair warning about the information herein: While I know a bit about many things,
+it may be worth reviewing the [caveats](#Caveats) at the end of this document
+before taking anything I say here as gospel.
 
-## Caveats
+## Tools
 
-### By a beginner and for beginners
+I'm fortunate enough to have accumulated a lifetime of tools. It's tempting
+to prescribe expensive tools for every operation described throughout. Most
+people reading this are unlikely to be retirement age, however, so it's
+unreasonable to expect that everyone will have access to expensive metrology
+equipment or a lathe, for example.
 
-I still considers myself a beginner at 3D printing, not an expert. I
-did, however, receive a EE degree in the early eighties and have spent a lifetime
-making and rebuilding machines of all sorts (from guitars and ukuleles to heavy
-precision machine tools). I was an absolute expert at making dust, chips,
-swarf, and other debris from every material imaginable even before I discoverd
-the joys of smearing molten ABS plastic over a heated bed.
+The [tools appendix](#tools) lists both _indispensable_ and merely helpful
+tools. I've struggled to keep the first list as short as possible, but the
+"luxury" items on the latter list will make the job much more pleasant. 
 
-This guide intentionally assumes very little from the reader. I'd 
-rather risk annoying advanced readers with "obvious" details than to assume
-knowledge another beginner might not possess.
+Whenever possible, I've taken pains to describe "field expedient"
+techniques that don't require expensive tools or can use the printer itself as a
+measuring tool.
 
-### Voron0 model-specific
+### Standards (references for straight and flat)
 
-To prevent getting bogged down in if-this-then-that, this guide focuses on the
-Voron0 printer model specifically (not least because that is the only Voron I've
-built thus far). The information is _absolutely_ applicable to other
-Voron models, however (or any FDM printer for that matter).  Even builders who
-have recently built Vorons with fancy bed probes, flying gantries, and
-hot-rodded extruders and tool-heads will benefit from what's written here.
+In a machine shop, all precision measurements ultimately refer back to a single
+reference plane: the extremely flat top of a regularly calibrated (and typically
+granite) surface plate.
 
-### Opinionated documentation
+But nobody can build a 3D printer without **something** they can depend
+on as a reference for straight and flat. The straighter and flatter, the better.
 
-To borrow a principle from the software development world, this guide is proudly
-_opinionated_ documentation. Instead of laboring through a zillion different
-options and weighing the pros and cons of each, it describes what
-works well for me. Of course there are other, possibly even better, ways
-to do things. You are, of course, free to disagree and deviate from anything
-written here. It's okay to be _wrong_.
+### Straightedge
 
-Kidding aside, what follows indisputably **WORKS**. Deviate with care.
+First, you need something that you **know** provides a straight **line** and is
+roughly as long as your longest frame member. You'll use this both to check the
+straightness of individual frame members, as well as your "surface plate."
 
-### Required tools
+The edge of a quality metal yardstick or a good carpenter's level is probably
+good enough, but even better is a precision ground rod.  
 
-I'm fortunate enough to have accumulated a lifetime of tools, and it's tempting
-to prescribe a specific, purpose-built tool for every operation described below,
-but it's unreasonable to expect that readers who aren't close to retirement will
-have access to expensive metrology equipment or a lathe, for example.
+A cheap [8mm diameter x 300 mm long, hardened, chromed, and precision-ground
+bearing shaft](https://www.amazon.com/ReliaBot-Hardened-Chrome-Plated-Linear/dp/B07DPF612G)
+provides a decent reference for straightness. You might even have one on hand
+from prior printer builds.
 
-The [tools appendix](#tools) includes a list of mandatory, indispensable tools as well as
-other highly desirable tools. I've struggled to keep the former list as short as
-absolutely possible.
+Whatever you use as a straightedge, use your eye with a bright light to check if
+things are straight.
 
-Whenever possible, I've also taken pains to describe "field
-expedient" techniques that don't require expensive tools or can use the printer
-itself as a measuring tool.
+Let's say you are checking a 2020 aluminum extrusion for straightness. First,
+find a source of bright, diffuse light. A window with sheer curtains on a
+sunny day is ideal. Hold the part up against your straightedge with the light
+source behind the mating edges. Look carefully, and you'll likely see areas of
+darkness where the parts touch and bright areas where the part bows away from
+the straightedge.
+
+A perfectly straight part will be dark along the entire
+length. You can even estimate how bent the extrusion is from the width and
+brightness of any light that peeks through.
+
+In practice, most parts aren't wavy but instead have a single bend: our
+extrusion will either show a gap in the middle or the middle will touch and both
+ends will bend away from the straightedge.
+
+Beware of parts that bend away from the straightedge at the ends: changing where you hold
+the parts together can affect the results. Even though the bend might be in the
+middle, you'll be able to force either end against the straightedge (levering the
+other end up into the air). Try not to move your hand position when examining
+the gap.
+
+With careful bending, you can often correct mild bends in an extrusion. As
+should be obvious, you'll need to bend _past_ straight as there will inevitably
+be some snap-back.
+
+### Surface plate
+
+A straightedge provides a standard reference for a straight _line_ in one dimension.
+
+Next up is a reference for a (roughly) flat plane in two dimensions.
+
+We only need a reasonably flat surface (say +/- 0.1mm over 400mm X 400mm) to aid assembly.
+
+A calibrated machinist's plate is probably overkill for most hobbyists (they are expensive and
+**heavy**). Even a B grade machinist's plate is flat to within roughly 0.0006"
+(0.015mm) over a couple of feet &mdash; more than 4X to 10X the precision we
+require for building.
+
+While a real surface plate (calibrated or not) is ideal, a
+countertop cut-off might be more realistic (or cut-_out_ &mdash; the piece they remove for a kitchen
+sink is considered scrap). Stone or solid surface (Corian) is ideal, but even a
+laminate countertop should be flat enough. Even a kitchen table might suffice.
+
+Whatever you use, you should check it with your straightedge:
+
+Lay the straightedge on the table at random angles (at least lengthwise, across,
+and on the diagonals). Shine a flashlight
+
+
+
+
 
 ## Mechanics
 
 Every 3D printer tuning guide ever written stresses the importance of physical
-_mechanics_. 
+_mechanics_.
 
 Printer parts that are supposed to stay put must be rigid and secure. Parts
 that are supposed to move freely, should. The geometric relationships between
 parts must be precisely maintained even as the toolhead and/or bed moves about.
 
 Yet beginners anxious to start printing often just **gloss over** the
-advice at the start of these guides, thinking, "I just carefully _assembled_
-the darn thing, **of course** all the screws are tight!"
+advice to check mechanics and immediately leap to changing the easiest things to
+adjust: slicer and printer settings. It's not uncommon to think: "I just carefully _assembled_
+the darn thing, **of course** all the screws are tight and everything is
+mechanically sound!"
 
-Easily 90% of all printing problems come down to mechanical issues, however, and
-no amount of fiddling with slicer or firmware configuration will solve these
-issues. It pays to slowly and thoroughly double-check everything described
-below, even if you **just** put the printer together.
+A huge fraction of all printing problems come down to mechanical issues,
+however, and no amount of fiddling with slicer or firmware configuration will
+solve these issues. It pays to slowly and thoroughly double-check everything
+as described below, even if you **just** put the printer together.
 
 ### Bottom up, outside in
 
-Verify the following items in this order to ensure your machine is
-operating properly:
+The following may seem obvious, but the devil is in the details.  Whether you
+are just getting started building the printer or if you are troubleshooting one
+that you built years ago, I recommend working from the bottom up, and from the
+outside in: platform, frame, bed, gantry/motion, extruder, hot-end, nozzle.
 
-1. Is the build surface as **flat** as possible?
+1. Is the surface you're building on (or the table/bench where you've placed
+   your built printer) actually **flat** and hopefully somewhat level?
+
 2. Are the fixed frame components **straight**, **rigidly** assembled, and
-   **square** to one another?
-3. Are movable parts properly **constrained** so they only move in one
-   dimension?
-4. Are **geometric relationships** maintained as parts move (especially the
-   nozzle to the bed, but this also applies to gantries, motor-shafts, belts, gears,
-   idlers, and leadscrews.)
-5. Do movable parts move **smoothly** without hitches and hiccups from dirt, poor
-   surface finish, improper alignment, or poor machining (parts out-of-round or
-   not straight)?
-   a. Outside: motion components (gantries, belts, and leadscrews) manually and
-   under power.
-   b. Inside: the filament path from spool to nozzle, manually and under power.
+**square** to one another? Are frame members that are supposed to be in the same
+*plane actually in the same plane, or slightly stepped from one another?
+
+3. Are movable parts properly **constrained** so they can only move in one
+dimension?  For example: can the toolhead only move along the X gantry, or does
+it also "flop" a bit so the nozzle can also move in Y (not good)?
+
+4. Are **geometric relationships** maintained as parts move?  This is especially
+important for the nozzle relationship to the bed, but it also applies to
+gantries, motor-shafts, belts, gears, idlers, and leadscrews.
+
+5. Do movable parts move **smoothly** without hitches and hiccups from dirt,
+improper alignment, poor surface finish, or poor machining (parts out-of-round,
+not straight, or with faces not parallel)?  
+
+    a. Outside: motion components (gantries, belts, and leadscrews) manually and under power.  
+
+    b. Inside: the filament path from spool to nozzle, manually and under power.
+
 ## 0. Unplug
 
 Before moving the toolhead manually, always unplug the power cable and, if at all
@@ -121,7 +180,6 @@ moves, it's highly unlikely you'll damage anything by moving the toolhead or
 leadscrew around by hand, but the circuitry isn't designed for power to flow in
 that direction, so unplugging the motors is cheap insurance. Do it.
 
-## 1. Verify the build surface is flat
 
 ### 1.1 The correct approach
 
@@ -335,35 +393,43 @@ This ground rod couldn't be easier to use: just hold it up to what you are
 comparing with a bright light behind it (flashlight or window) and look for
 uneven gaps.
 
-#### Surface plates
-
-In a (pre-CMM) machine shop, every part measurement and geometric relationship is
-ultimately measured relative to a precision "surface plate" somewhere in the
-shop (usually made of very thick granite). They know **that** surface is flat,
-because they pay heavily ensure it: they pay a calibration lab to measure any
-discrepancies (using expensive tools like differential levels and optical
-equipment) and pay a skilled technician to lap away any discrepancies.
-
-Our needs are much more modest, we only care about, at most +/- 0.025mm
-differences over our little 120mm x 120mm bed ("plus or minus a thou" or +/- 0.001" in my
-non-metric world). A machine shop needs at least 10X better than that over the same
-distance ("plus or minus a tenth" or +/- 0.0025mm AKA +/- 0.0001").
-
-Since we don't care about certification to lab standards, we can get away with
-much cheaper options. Because granite is heavy, even a small (say 9" x 9")
-surface plate will still cost about $50 USD. Surprising to home-gamers, the
-prices for uncalibrated plates go **down** for the largest sizes, with the
-largest plates often offered for free! (This is less surprising the first time
-you try to move one of these without a forklift.)
-
-Instead of expensive and heavy thick granite, most of us will opt for pieces of
-thick float glass or comparatively thin granite countertops. These should still
-be flat and rigid enough for our purposes.
-
 ## Tools
 
 ### Indispensable
 
 ### Desirable
 
+## Caveats
 
+### By a beginner and for beginners
+
+I still considers myself a beginner at 3D printing, not an expert. I
+did, however, receive a EE degree in the early eighties and have spent a lifetime
+making and rebuilding machines of all sorts (from guitars and ukuleles to heavy
+precision machine tools). I was an absolute expert at making dust, chips,
+swarf, and other debris from every material imaginable even before I discoverd
+the joys of smearing molten ABS plastic over a heated bed.
+
+This guide intentionally assumes very little from the reader. I'd 
+rather risk annoying advanced readers with "obvious" details than to assume
+knowledge another beginner might not possess.
+
+### Voron0 model-specific
+
+To prevent getting bogged down in if-this-then-that, this guide focuses on the
+Voron0 printer model specifically (not least because that is the only Voron I've
+built thus far). The information is _absolutely_ applicable to other
+Voron models, however (or any FDM printer for that matter).  Even builders who
+have recently built Vorons with fancy bed probes, flying gantries, and
+hot-rodded extruders and tool-heads will benefit from what's written here.
+
+### Opinionated documentation
+
+To borrow a principle from the software development world, this guide is proudly
+_opinionated_ documentation. Instead of laboring through a zillion different
+options and weighing the pros and cons of each, it describes what
+works well for me. Of course there are other, possibly even better, ways
+to do things. You are, of course, free to disagree and deviate from anything
+written here. It's okay to be _wrong_.
+
+Kidding aside, what follows indisputably **WORKS**. Deviate with care.
