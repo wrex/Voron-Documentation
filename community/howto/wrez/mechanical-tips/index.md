@@ -3,7 +3,7 @@ layout: default
 title: Mechanical Tips
 nav_exclude: false
 has_children: true
-parent: Community Documentation
+parent: "How-To's"
 ---
 
 # Mechanical tips

@@ -4,17 +4,20 @@ title: Indispensable Tools
 nav_exclude: false
 has_children: false
 parent: Mechanical Tips
-grand_parent: Community Documentation
+grand_parent: "How-To's"
 nav_order: 1
 ---
 
-## Tools
+# Tools
 
 I'm fortunate enough to have accumulated a lifetime of tools. It's tempting
 to prescribe expensive tools for every operation described throughout. Most
 people reading this are unlikely to be retirement age, however, so it's
 unreasonable to expect that everyone will have access to expensive metrology
 equipment or a lathe, for example.
+
+There are a few truly indispensable tools, however. I don't know how I'd
+assemble a 3D printer without a pair of calipers, for example.
 
 The [tools appendix](#tools) lists both _indispensable_ and merely helpful
 tools. I've struggled to keep the first list as short as possible, but the
